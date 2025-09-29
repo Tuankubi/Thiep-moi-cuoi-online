@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thiệp Đám Cưới — [Tên Cô dâu] & [Tên Chú rể]</title>
+  <meta name="description" content="Thiệp mời đám cưới online - mẫu có countdown, RSVP, gallery và chia sẻ" />
+  <!-- Thay font-family / Google Fonts nếu muốn -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--accent:#b45b6c;--bg:#fffaf8;--muted:#6b6b6b}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial; background:var(--bg); color:#222}
+    .container{max-width:980px;margin:0 auto;padding:20px}
+
+    /* Cover */
+    .cover{min-height:60vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:60px 20px;background:linear-gradient(180deg,rgba(180,91,108,0.08),transparent)}
+    .names{font-family:'Playfair Display',serif;font-size:34px;color:var(--accent);}
+    .date{margin-top:8px;color:var(--muted)}
+    .btn{display:inline-block;margin:10px 6px;padding:10px 18px;border-radius:12px;background:var(--accent);color:white;text-decoration:none}
+
+    /* Sections */
+    section{background:white;border-radius:14px;padding:18px;margin:18px 0;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    h2{margin:0 0 10px 0;font-family:'Playfair Display',serif}
+    p{margin:0 0 10px 0}
+
+    /* Countdown */
+    .countdown{display:flex;gap:14px;justify-content:center}
+    .count-item{min-width:64px;padding:12px;background:#fff;border-radius:10px;text-align:center}
+    .count-item strong{display:block;font-size:20px}
+
+    /* RSVP form */
+    form label{display:block;margin:8px 0 4px;font-weight:600}
+    input[type=text], input[type=email], textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
+    input[type=submit]{margin-top:10px;padding:10px 16px;border-radius:10px;border:0;background:var(--accent);color:#fff;cursor:pointer}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+
+    /* Footer */
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:center;margin-top:10px}
+
+    @media (max-width:600px){.names{font-size:26px}.cover{padding:40px 16px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- COVER -->
+    <header class="cover" role="banner">
+      <div>
+        <div style="font-size:14px;color:var(--muted)">Chúng tôi trân trọng kính mời</div>
+        <div class="names">[Tên Cô dâu] &amp; [Tên Chú rể]</div>
+        <div class="date">Thứ 7, 20 Tháng 12, 2025 — 10:00 sáng</div>
+        <div style="margin-top:14px">
+          <a class="btn" id="btn-scroll" href="#details">Xem chi tiết</a>
+          <a class="btn" id="btn-rsvp" href="#rsvp" style="background:#6b8f77">RSVP</a>
+        </div>
+        <div class="toolbar">
+          <button id="play-music" class="btn" style="background:transparent;color:var(--accent);border:1px solid var(--accent)">Bật nhạc</button>
+          <button onclick="window.print()" class="btn" style="background:#444">In / Save PDF</button>
+          <button id="shareBtn" class="btn" style="background:#0a84ff">Chia sẻ</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- COUNTDOWN + DETAILS -->
+    <section id="details">
+      <h2>Đếm ngược đến ngày trọng đại</h2>
+      <div class="countdown" id="countdown">
+        <div class="count-item"><strong id="d">0</strong><small>Ngày</small></div>
+        <div class="count-item"><strong id="h">0</strong><small>Giờ</small></div>
+        <div class="count-item"><strong id="m">0</strong><small>Phút</small></div>
+        <div class="count-item"><strong id="s">0</strong><small>Giây</small></div>
+      </div>
+
+      <h2 style="margin-top:18px">Thông tin buổi lễ</h2>
+      <p><strong>Địa điểm:</strong> Nhà hàng Hoa Mai — 123 Đường ABC, Quận XYZ</p>
+      <p><strong>Thời gian:</strong> Đón khách từ 9:30 — Lễ bắt đầu 10:00</p>
+      <p><strong>Ghi chú:</strong> Xin vui lòng mặc trang phục lịch sự. Nếu đến muộn, liên hệ: 0123 456 789</p>
+    </section>
+
+    <!-- STORY -->
+    <section>
+      <h2>Câu chuyện của chúng tôi</h2>
+      <p>Viết vài dòng giới thiệu, cách hai bạn quen nhau, lời nhắn gửi khách mời... (chỉnh nội dung ở phần HTML)</p>
+    </section>
+
+    <!-- GALLERY -->
+    <section>
+      <h2>Hình ảnh</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hinh1">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hinh2">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hinh3">
+        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hinh4">
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+      <h2>RSVP — Xác nhận tham dự</h2>
+      <p>Vui lòng điền thông tin để chúng tôi sắp xếp chỗ ngồi.</p>
+      <!-- Thay action bằng Formspree/Sheetbest/Zapier endpoint khi muốn lưu dữ liệu thực tế -->
+      <form id="rsvpForm" action="" onsubmit="return handleRSVP(event)">
+        <label for="name">Họ & Tên</label>
+        <input id="name" name="name" type="text" required placeholder="Nguyễn Văn A">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="ban@example.com">
+
+        <label for="phone">Số điện thoại</label>
+        <input id="phone" name="phone" type="text" placeholder="0123 456 789">
+
+        <label for="guests">Số khách đi cùng</label>
+        <input id="guests" name="guests" type="text" placeholder="0">
+
+        <label for="note">Lời nhắn</label>
+        <textarea id="note" name="note" rows="3" placeholder="Ví dụ: Mình sẽ tham dự"></textarea>
+
+        <input type="submit" value="Gửi RSVP">
+        <div id="rsvpMessage" style="margin-top:8px;color:green;display:none"></div>
+      </form>
+    </section>
+
+    <!-- GUESTBOOK -->
+    <section>
+      <h2>Guestbook — Lời chúc</h2>
+      <p>Khách mời có thể gửi lời chúc ở đây (demo client-side). Để lưu trên server, kết nối API hoặc Google Sheets.</p>
+      <div>
+        <input id="gName" placeholder="Tên" style="padding:8px;border-radius:8px;border:1px solid #e6e6e6;width:30%">
+        <input id="gMsg" placeholder="Lời chúc" style="padding:8px;border-radius:8px;border:1px solid #e6e6e6;width:60%">
+        <button onclick="addWish()" style="padding:8px;border-radius:8px">Gửi</button>
+      </div>
+      <ul id="wishes" style="margin-top:12px"></ul>
+    </section>
+
+    <footer style="text-align:center;margin:20px 0;color:var(--muted)">Thiệp được tạo bằng mẫu miễn phí — Chỉnh sửa nội dung &amp; hình ảnh theo ý thích.</footer>
+  </div>
+
+  <!-- Music (tùy chọn) -->
+  <audio id="bgmusic" loop src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7f3b0e2ccd.mp3?filename=romantic-ambience-118462.mp3"></audio>
+
+  <script>
+    // ========== CẤU HÌNH NGƯỜI DÙNG ==========
+    // Thay các giá trị bên dưới cho phù hợp
+    const WEDDING_DATE = new Date('2025-12-20T10:00:00'); // YYYY-MM-DDTHH:mm:ss
+    const BRIDE = '[Tên Cô dâu]';
+    const GROOM = '[Tên Chú rể]';
+
+    // Gán tên tự động (tùy chọn)
+    document.querySelector('.names').textContent = BRIDE + ' & ' + GROOM;
+
+    // ========== COUNTDOWN ==========
+    function updateCountdown(){
+      const now = new Date();
+      const diff = Math.max(0, WEDDING_DATE - now);
+      const d = Math.floor(diff / (1000*60*60*24));
+      const h = Math.floor((diff / (1000*60*60)) % 24);
+      const m = Math.floor((diff / (1000*60)) % 60);
+      const s = Math.floor((diff / 1000) % 60);
+      document.getElementById('d').textContent = d;
+      document.getElementById('h').textContent = h;
+      document.getElementById('m').textContent = m;
+      document.getElementById('s').textContent = s;
+    }
+    updateCountdown(); setInterval(updateCountdown,1000);
+
+    // ========== RSVP HANDLER (demo) ==========
+    function handleRSVP(e){
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        guests: document.getElementById('guests').value,
+        note: document.getElementById('note').value
+      };
+      // Demo: hiển thị thông báo. Để lưu dữ liệu, gửi `fetch` tới Formspree, Zapier Webhook hoặc server của bạn.
+      const msg = document.getElementById('rsvpMessage');
+      msg.style.display='block'; msg.textContent = 'Cảm ơn ' + (data.name||'Bạn') + ', thông tin đã được ghi nhận!';
+      // reset form
+      e.target.reset();
+      return false;
+    }
+
+    // ========== GUESTBOOK (client-side demo) ==========
+    function addWish(){
+      const name = document.getElementById('gName').value || 'Khách quý';
+      const msg = document.getElementById('gMsg').value || '';
+      if(!msg) return alert('Vui lòng nhập lời chúc');
+      const li = document.createElement('li');
+      li.style.padding='8px 0'; li.textContent = name + ': ' + msg;
+      document.getElementById('wishes').prepend(li);
+      document.getElementById('gName').value=''; document.getElementById('gMsg').value='';
+    }
+
+    // ========== MUSIC / SHARE / UI ==========
+    const music = document.getElementById('bgmusic');
+    document.getElementById('play-music').addEventListener('click', ()=>{
+      if(music.paused){ music.play(); event.target.textContent='Tắt nhạc'; }
+      else { music.pause(); event.target.textContent='Bật nhạc'; }
+    });
+
+    // Smooth scroll
+    document.getElementById('btn-scroll').addEventListener('click', (e)=>{ e.preventDefault(); document.getElementById('details').scrollIntoView({behavior:'smooth'}); });
+
+    // Web Share API
+    document.getElementById('shareBtn').addEventListener('click', async ()=>{
+      const shareData = {title: document.title, text: BRIDE + ' & ' + GROOM + ' mời bạn dự lễ cưới', url: location.href};
+      if(navigator.share) await navigator.share(shareData).catch(()=>{});
+      else alert('Trình duyệt không hỗ trợ chức năng chia sẻ — hãy copy URL và gửi cho khách mời.');
+    });
+
+    // Có thể thêm: gửi RSVP lên Google Sheets bằng Apps Script, Formspree, Sheet.best, hoặc tích hợp serverless function.
+  </script>
+
+  <!-- HƯỚNG DẪN NHANH:
+    - Thay [Tên Cô dâu], [Tên Chú rể] và WEDDING_DATE trong phần script.
+    - Thay hình ảnh gallery bằng ảnh thật (hoặc upload lên hosting rồi đổi src).
+    - Để lưu RSVP thực tế: đăng ký Formspree hoặc tạo Webhook (Zapier) -> thay action trong form hoặc dùng fetch.
+    - Đăng lên: GitHub Pages, Netlify, Vercel, hoặc host trên hosting của bạn.
+    - Nếu muốn nhận RSVP vào Google Sheets: tạo Google Apps Script Web App hoặc dùng Sheet.best.
+  -->
+</body>
+</html>
